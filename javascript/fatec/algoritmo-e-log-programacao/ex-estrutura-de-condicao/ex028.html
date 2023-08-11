@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 28</title>
+</head>
+<body>
+    <script>
+       
+       var numeroConta = Number(prompt('Digite o número da conta.'));
+       var saldo = Number(prompt('Digite o valor do saldo.'));
+       var debito = Number(prompt('Digite o valor do débito.'));
+       var credito = Number(prompt('Digite o valor do crédito.'));
+
+       var saldoAtual = saldo - debito + credito;
+       
+       if (saldoAtual >= 0) {
+            document.write(`Conta: ${numeroConta} <br><br> Saldo Anterior: R$ ${saldo} <br><br> Descontos: R$ ${debito} <br><br> Creditos: R$ ${credito} <br><br> Saldo Total: R$ ${saldoAtual} <br><br> <strong>SALDO POSITIVO.</strong>`);
+
+       } else {
+        document.write(`Conta: ${numeroConta} <br><br> Saldo Anterior: R$ ${saldo} <br><br> Descontos: R$ ${debito} <br><br> Creditos: R$ ${credito} <br><br> Saldo Total: R$ ${saldoAtual} <br><br> <strong>SALDO NEGATIVO.</strong>`);
+       }       
+
+    </script>
+</body>
+</html>

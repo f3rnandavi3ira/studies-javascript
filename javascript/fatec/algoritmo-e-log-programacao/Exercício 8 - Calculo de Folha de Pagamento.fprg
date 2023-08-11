@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nanda"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-23 10:43:46 "/>
+        <attribute name="created" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDItMjM7IjA5OjA5OjAyICI7MjcyOA=="/>
+        <attribute name="edited" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDItMjM7IjEwOjQzOjQ2ICI7MTsyODM0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="varIDFuncion&#225;rio" type="Real" array="False" size=""/>
+            <declare name="valorQTDHRTrabalhadas" type="Real" array="False" size=""/>
+            <declare name="varINSS" type="Real" array="False" size=""/>
+            <declare name="valorSal&#225;rioBruto" type="Real" array="False" size=""/>
+            <declare name="valorSal&#225;rioLiquido" type="Real" array="False" size=""/>
+            <declare name="VALORHORASTRABALHADAS" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o ID do funcion&#225;rio.&quot;" newline="True"/>
+            <input variable="varIDFuncion&#225;rio"/>
+            <output expression="&quot;Informe a quantidade de horas trabalhadas.&quot;" newline="True"/>
+            <input variable="valorQTDHRTrabalhadas"/>
+            <output expression="&quot;Informe o valor do trabalho por hora.&quot;" newline="True"/>
+            <input variable="VALORHORASTRABALHADAS"/>
+            <assign variable="valorSal&#225;rioBruto" expression="valorQTDHRTrabalhadas * VALORHORASTRABALHADAS"/>
+            <if expression="(valorSal&#225;rioBruto&lt;1212.00) || (valorSal&#225;rioBruto==1212.00)">
+                <then>
+                    <assign variable="varINSS" expression="valorSal&#225;rioBruto*7.5/100"/>
+                </then>
+                <else>
+                    <if expression="(valorSal&#225;rioBruto&gt;1212.00) &amp;&amp; (valorSal&#225;rioBruto&lt;=2427.35)">
+                        <then>
+                            <assign variable="varINSS" expression="valorSal&#225;rioBruto*9/100"/>
+                        </then>
+                        <else>
+                            <if expression="(valorSal&#225;rioBruto&gt;2427.35) &amp;&amp; (valorSal&#225;rioBruto&lt;=3641.03)">
+                                <then>
+                                    <assign variable="varINSS" expression="valorSal&#225;rioBruto*12/100"/>
+                                </then>
+                                <else>
+                                    <if expression="(valorSal&#225;rioBruto&gt;3641.03) &amp;&amp; (valorSal&#225;rioBruto&lt;=7087.22)">
+                                        <then>
+                                            <assign variable="varINSS" expression="valorSal&#225;rioBruto*14/100"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="valorSal&#225;rioLiquido" expression="valorSal&#225;rioBruto - varINSS"/>
+            <output expression="&quot;ID Funcion&#225;rio: R$&quot; &amp;  varIDFuncion&#225;rio" newline="True"/>
+            <output expression="&quot;Sal&#225;rio Bruto: R$&quot; &amp; valorSal&#225;rioBruto" newline="True"/>
+            <output expression="&quot;Desconto INSS: R$&quot; &amp;  varINSS" newline="True"/>
+            <output expression="&quot;Sal&#225;rio Liquido: R$&quot; &amp; valorSal&#225;rioLiquido" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

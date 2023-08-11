@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHouse</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="conteudo">
+    <header>
+        <div class="logo">
+            <a href="index.html" target="_self"><img src="images/logo.png" alt="BookHouse"></a>
+        </div>
+
+        <div class="pesq">
+            <input type="text" name="pesq" id="pesq" placeholder="O que você esta procurando?">
+            <button><img src="images/pesquisa.png" alt="lupa"></button>
+        </div>
+
+        <div class="usuario">
+            <a href="cadastro_usuário.html">Usuário,</a>
+            <a href="login.html"><img src="images/adicionar-usuario.png" alt="usuário"></a>
+        </div>
+    </header>
+    <nav>
+        <!--No onclick definimos a função carregarPagina (função que inicia a requisição ajax) e no paramêtro informamos a URL que deve ser acessada. Ou seja, quando o usuário clicar em alguma página que deseja acessar, a função será executada para realizar o direcionamento através do ajax.-->
+        <a href="" onclick="carregarPagina('ficcao_cientifica.html')">Ficção Científica</a>
+        <a href="" onclick="carregarPagina('romance.html')">Romance</a>
+        <a href="" onclick="carregarPagina('terror.html')">Terror</a>
+        <a href="" onclick="carregarPagina('queer.html')">Queer</a>
+        <a href="" onclick="carregarPagina('mangas.html')">Mangás</a>
+    </nav>
+    
+    <main>
+        <aside>
+            <img src="images/banner.png" alt="banner">
+        </aside>
+
+        <!-- conteúdo principal -->
+
+        <p>MAIS VENDIDOS</p>
+        <section>
+            
+            <div class="livroDestaque">
+                <img src="images/mangas/naruto.jpg" alt="Naruto">
+                <p class="titulo">NARUTO GOLD 43</p>
+                <P class="autor">Masashi Kishimoto</P>
+                <P class="preco">R$ 39,90</P>
+                <a href="#" onclick="carregarPagina('mangas.html')"><button>Comprar</button></a>
+            </div>
+
+            <div class="livroDestaque">
+                <img src="images/queer/direitos_lgbts.jpg" alt="Direitos LGBT">
+                <p class="titulo">DIREITOS LGBTS</p>
+                <P class="autor">Luciana Genro</P>
+                <P class="preco">R$ 49,99</P>
+                <a href="#" onclick="carregarPagina('queer.html')"><button>Comprar</button></a>
+            </div>
+
+            <div class="livroDestaque">
+                <img src="images/ficcao_cientifica/2001_uma_odisseia_no_espaco.jpg" alt="2001 Uma odisseia no espaço">
+                <p class="titulo">2001 UMA ODISSEIA NO ESPAÇO</p>
+                <P class="autor">Arthur C. Clarke</P>
+                <P class="preco">R$ 32,99</P>
+                <a href="#" onclick="carregarPagina('ficcao_cientifica.html')"><button>Comprar</button></a>
+            </div>
+
+            <div class="livroDestaque">
+                <img src="images/terror/um_passado_sombrio.jpg" alt="Um Passado Sombrio">
+                <p class="titulo">UM PASSADO SOMBRIO</p>
+                <P class="autor">Peter Straub</P>
+                <P class="preco">R$ 38,99</P>
+                <a href="#" onclick="carregarPagina('terror.html')"><button>Comprar</button></a>
+            </div>
+
+            <div class="livroDestaque">
+                <img src="images/ficcao_cientifica/inteligencia_artificial.jpg" alt="Inteligencia artificial">
+                <p class="titulo">INTELIGENCIA ARTIFICIAL</p>
+                <P class="autor">Nick Polson e James Scott</P>
+                <P class="preco">R$ 40,99</P>
+                <a href="#" onclick="carregarPagina('ficcao_cientifica.html')"><button>Comprar</button></a>
+            </div>
+
+            <div class="livroDestaque">
+                <img src="images/romance/mil_beijos_de_garoto.jpg" alt="Mil beijos de garoto">
+                <p class="titulo">MIL BEIJOS DE GAROTO</p>
+                <P class="autor">Tillie Cole</P>
+                <P class="preco">R$ 37,90</P>
+                <a href="#" onclick="carregarPagina('romance.html')"><button>Comprar</button></a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <ul class="contato">
+                <li>Rua Pedro Rissato, 30 - Osasco, SP.</li>
+                <li>62.249.008/0001-43</li>
+                <li>contato@bookhoooouse.com</li>
+            </ul>
+        </div>
+
+        <div class="sociais">
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><img src="images/twitter.png" alt="Twitter"></a></li>
+                <li><a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube"></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
+        
+    </footer>
+</body>
+
+<script src="src/js/carrega_pg.js"></script> <!--chamada para requisição ajax que realizará o direcionamento para a página solicitada pelo usuário.-->
+
+</html>

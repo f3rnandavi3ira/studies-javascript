@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 41</title>
+</head>
+<body>
+    <script>
+
+        function MediaPopulacao() {
+
+            var salarioPopulacao = 1;
+            var quantidadeFilhos = 1;
+            var maiorSalario = 0;
+            var populacaoSalarioAte100 = 0;
+            var somaSalarios = 0;
+            var quantidadeTotalPopulacao = 0;
+            var somaQuantidadeFilhos = 0;
+            var mediaSalarial;
+            var mediaNumeroFilhos;
+            var percentual;
+
+            
+            while(salarioPopulacao != 0){
+
+                var salarioPopulacao = Number(prompt("Digite o valor do salário. Para parar o programa digite -1 (menos um)."))
+                var quantidadeFilhos = Number(prompt("Informe a quantidade de filhos."));
+
+                if (salarioPopulacao != 0){
+                
+                quantidadeTotalPopulacao++;
+                somaSalarios = salarioPopulacao + somaSalarios;
+                somaQuantidadeFilhos = quantidadeFilhos + somaQuantidadeFilhos;
+
+                if(salarioPopulacao > maiorSalario){
+                    maiorSalario = salarioPopulacao;
+                }
+                if(salarioPopulacao <= 100){
+                    populacaoSalarioAte100++;
+                    
+                }
+
+                }
+                
+                  
+            }
+            
+            mediaSalarial =  somaSalarios / quantidadeTotalPopulacao;
+            mediaNumeroFilhos = somaQuantidadeFilhos / quantidadeTotalPopulacao;
+            percentual = populacaoSalarioAte100 / quantidadeTotalPopulacao * 100;
+
+            document.write("<br>" + "A média do salário da população informada é: R$ " + mediaSalarial +"<br>");
+            document.write("<br>" +"A média do número de filhos da população informada é: " + mediaNumeroFilhos + "<br>");
+            document.write("<br>" +"O maior salário da população informada é: R$ " +maiorSalario + "<br>");
+            document.write("<br>" +"O percentual de pessoas que recebem um salário de até R$ 100,00 é: " + percentual + "%" + "<br>");
+
+        }       
+       
+        MediaPopulacao();
+
+    </script>
+</body>
+</html>

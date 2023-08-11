@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nanda"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-23 11:22:44 "/>
+        <attribute name="created" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDItMjM7IjExOjA5OjA4ICI7MjcyNw=="/>
+        <attribute name="edited" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDItMjM7IjExOjIyOjQ0ICI7MTsyODMw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="valorAlunosHomens" type="Integer" array="False" size=""/>
+            <declare name="valorAlunasMulheres" type="Integer" array="False" size=""/>
+            <declare name="valorPorcentagemAlunosHomens" type="Integer" array="False" size=""/>
+            <declare name="valorPorcentagemAlunasMulheres" type="Integer" array="False" size=""/>
+            <declare name="valorTotalAlunos" type="Integer" array="False" size=""/>
+            <output expression="&quot;Qual o total de alunos homens?&quot;" newline="True"/>
+            <input variable="valorAlunosHomens"/>
+            <output expression="&quot;Qual o total de alunas mulheres?&quot;" newline="True"/>
+            <input variable="valorAlunasMulheres"/>
+            <assign variable="valorTotalAlunos" expression="valorAlunosHomens + valorAlunasMulheres"/>
+            <assign variable="valorPorcentagemAlunosHomens" expression="valorAlunosHomens / valorTotalAlunos * 100"/>
+            <assign variable="valorPorcentagemAlunasMulheres" expression="valorAlunasMulheres / valorTotalAlunos * 100"/>
+            <output expression="&quot;Percentual de Homens em sala de aula&quot;&amp;&quot; &quot;&amp;valorPorcentagemAlunosHomens&amp;&quot;%&quot;" newline="True"/>
+            <output expression="&quot;Percentual de Mulheres em sala de aula&quot;&amp;&quot; &quot;&amp;valorPorcentagemAlunasMulheres&amp;&quot;%&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

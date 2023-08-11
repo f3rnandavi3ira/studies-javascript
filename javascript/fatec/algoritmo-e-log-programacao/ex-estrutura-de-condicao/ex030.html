@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 30</title>
+</head>
+<body>
+    <script>
+       //fazer um programa com dois botoes de alcool e gasolina para cada um iniciar um funcao pra calcular os valores
+       var quantidadeLitro = Number(prompt('Digite a quantidade de litros.'));
+       var tipoCombustivel = prompt('Digite o tipo de combustível ( A - Álcool ou G - Gasolina).');
+
+       const precoLitroAlcool = 2.90;
+       const precoLitroGasolina = 3.30;
+       const percDescontoAte20LtGasolina = 0.03; // 3/100
+       const percDescontoAte20LtAlcool = 0.04; // 4/100
+       const percDescontoAcima20LtGasolina = 0.06; // 6/100
+       const percDescontoAcima20LtAlcool = 0.05; // 5/100
+       
+       
+       if (tipoCombustivel == "G") {
+            if(quantidadeLitro > 20) {
+                let totalDescontoAcima20LtGasolina = (precoLitroGasolina * percDescontoAcima20LtGasolina) * quantidadeLitro;
+                let totalGasolina = (quantidadeLitro * precoLitroGasolina) - totalDescontoAcima20LtGasolina;
+
+                document.write(`Tipo de Combustível: Gasolina <br> Total de litros: ${quantidadeLitro} <br><br> Total a ser pago ${totalGasolina}.`);
+            } else {
+                let totalDescontoAte20LtGasolina = (precoLitroGasolina * percDescontoAte20LtGasolina) * quantidadeLitro;
+                let totalGasolina = (quantidadeLitro * precoLitroGasolina) - totalDescontoAte20LtGasolina;
+
+                document.write(`Tipo de Combustível: Gasolina <br> Total de litros: ${quantidadeLitro} <br><br> Total a ser pago ${totalGasolina}.`);
+            }
+        } if (tipoCombustivel == "A") {
+            if(quantidadeLitro > 20) {
+                let totalDescontoAcima20LtAlcool = (precoLitroAlcool * percDescontoAcima20LtAlcool) * quantidadeLitro;
+                let totalAlcool = (quantidadeLitro * precoLitroAlcool) - totalDescontoAcima20LtAlcool;
+
+                document.write(`Tipo de Combustível: Ácool <br> Total de litros: ${quantidadeLitro} <br><br> Total a ser pago ${totalAlcool}.`);
+            } else {
+                let totalDescontoAte20LtAlcool = (precoLitroAlcool * percDescontoAte20LtAlcool) * quantidadeLitro;
+                let totalAcool = (quantidadeLitro * precoLitroAlcool) - totalDescontoAte20LtAlcool;
+
+                document.write(`Tipo de Combustível: Ácool <br> Total de litros: ${quantidadeLitro} <br><br> Total a ser pago ${totalAcool}.`);
+            }   
+        }
+    </script>
+</body>
+</html>

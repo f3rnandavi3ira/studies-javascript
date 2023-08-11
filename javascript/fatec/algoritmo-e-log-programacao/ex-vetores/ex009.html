@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09</title>
+</head>
+<body>
+    <script>
+
+        function numerosRepetidos() {
+            
+            debugger;
+            var numero;
+            numerosAleatorios = [];
+            repetidos = [];
+            var nrConta = 0;
+
+            for (let i = 0; i < 15; i++){
+                numero = Math.floor(Math.random() * 11);
+                numerosAleatorios.push(numero);
+                repetidos.push(numero);
+            }
+
+            document.write(numerosAleatorios.join('*') + '<br><br>')
+
+            for (let i = 0; i < 15; i++) {
+                var numero = repetidos[i];
+                
+                nrConta = 0;
+
+                for(let y = 0; y < 15; y++) {
+                    if(numero == numerosAleatorios[y]){
+                        nrConta++;                    
+                    }
+                }
+                
+                if(nrConta < 2){
+                    repetidos[i] = null;  
+                }
+                    
+            }
+
+            for (let i = 0; i < 15; i++) {
+                if(repetidos[i] != null) {
+                    document.write(`Existem valores repetidos na posição ${i}`)
+                    document.write(`<br>`)
+                    document.write(`Valor repetido ${repetidos[i]}`)
+                    document.write(`<br><br>`)
+                }
+            }
+                
+        }
+        
+        numerosRepetidos();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nanda"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-03-26 02:48:44 "/>
+        <attribute name="created" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDMtMjY7IjEyOjU3OjI1ICI7MjczNA=="/>
+        <attribute name="edited" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDMtMjY7IjAyOjQ4OjQ0ICI7NjsyODQ3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="moeda" type="Integer" array="False" size=""/>
+            <declare name="valor" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oUSD" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oEUR" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oJPY" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oGBP" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oCHF" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oCAD" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oAUS" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oZAR" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oCNY" type="Real" array="False" size=""/>
+            <declare name="convers&#227;oARS" type="Real" array="False" size=""/>
+            <declare name="cambioUSD" type="Real" array="False" size=""/>
+            <declare name="cambioEUR" type="Real" array="False" size=""/>
+            <declare name="cambioJPY" type="Real" array="False" size=""/>
+            <declare name="cambioGBP" type="Real" array="False" size=""/>
+            <declare name="cambioCHF" type="Real" array="False" size=""/>
+            <declare name="cambioCAD" type="Real" array="False" size=""/>
+            <declare name="cambioAUS" type="Real" array="False" size=""/>
+            <declare name="cambioZAR" type="Real" array="False" size=""/>
+            <declare name="cambioCNY" type="Real" array="False" size=""/>
+            <declare name="cambioARS" type="Real" array="False" size=""/>
+            <assign variable="cambioUSD" expression="5.24"/>
+            <assign variable="cambioEUR" expression="5.95"/>
+            <assign variable="cambioJPY" expression="0.04"/>
+            <assign variable="cambioGBP" expression="6.83"/>
+            <assign variable="cambioCHF" expression="6.06"/>
+            <assign variable="cambioCAD" expression="4.03"/>
+            <assign variable="cambioAUS" expression="3.74"/>
+            <assign variable="cambioZAR" expression="0.29"/>
+            <assign variable="cambioCNY" expression="0.76"/>
+            <assign variable="cambioARS" expression="0.02"/>
+            <output expression="&quot;Digite o n&#250;mero de 1 &#224; 10 referente a moeda que deseja fazer a convers&#227;o do BRL :::: 1 USD , 2 EUR , 3 JPY, 4 GBP, 5 CHF, 6 CAD, 7 AUD, 8 ZAR, 9 CNY, 10 ARS. &quot;" newline="True"/>
+            <input variable="moeda"/>
+            <output expression="&quot;Digite o valor que deseja converter: &quot;" newline="True"/>
+            <input variable="valor"/>
+            <if expression="(moeda==1)">
+                <then>
+                    <assign variable="convers&#227;oUSD" expression="valor / cambioUSD"/>
+                    <output expression="&quot;valor &quot;&amp;&quot; reais em USD &#233; &quot;&amp; convers&#227;oUSD &amp;&quot; d&#243;lares (com base no dia 26/03/2023).&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="(moeda==2)">
+                        <then>
+                            <assign variable="convers&#227;oEUR" expression="valor / cambioEUR"/>
+                            <output expression="&quot;valor &quot;&amp;&quot; reais em EUR &#233; &quot;&amp; convers&#227;oEUR &amp;&quot; euros (com base no dia 26/03/2023).&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="(moeda==3)">
+                                <then>
+                                    <assign variable="convers&#227;oJPY" expression="valor / cambioJPY"/>
+                                    <output expression="&quot;valor &quot;&amp;&quot; reais em JPY &#233; &quot;&amp; convers&#227;oJPY &amp;&quot; ienes (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="(moeda==4)">
+                                        <then>
+                                            <assign variable="convers&#227;oGBP" expression="valor / cambioGBP"/>
+                                            <output expression="&quot;valor &quot;&amp;&quot; reais em GBP &#233; &quot;&amp; convers&#227;oGBP &amp;&quot; libras (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="(moeda==5)">
+                                                <then>
+                                                    <assign variable="convers&#227;oCHF" expression="valor / cambioCHF"/>
+                                                    <output expression="&quot;valor &quot;&amp;&quot; reais em CHF &#233; &quot;&amp; convers&#227;oCHF &amp;&quot; franco-su&#237;&#231;os (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="(moeda==6)">
+                                                        <then>
+                                                            <assign variable="convers&#227;oCAD" expression="valor / cambioCAD"/>
+                                                            <output expression="&quot;valor &quot;&amp;&quot; reais em CAD &#233; &quot;&amp; convers&#227;oCAD &amp;&quot; d&#243;lares canadense (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="(moeda==7)">
+                                                                <then>
+                                                                    <assign variable="convers&#227;oAUS" expression="valor / cambioAUS"/>
+                                                                    <output expression="&quot;valor &quot;&amp;&quot; reais em AUS &#233; &quot;&amp; convers&#227;oAUS &amp;&quot; d&#243;lares australianos (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="(moeda==8)">
+                                                                        <then>
+                                                                            <assign variable="convers&#227;oZAR" expression="valor / cambioZAR"/>
+                                                                            <output expression="&quot;valor &quot;&amp;&quot; reais em ZAR &#233; &quot;&amp; convers&#227;oZAR &amp;&quot; rands (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="(moeda==9)">
+                                                                                <then>
+                                                                                    <assign variable="convers&#227;oCNY" expression="valor / cambioCNY"/>
+                                                                                    <output expression="&quot;valor &quot;&amp;&quot; reais em CNY &#233; &quot;&amp; convers&#227;oCNY &amp;&quot; yuans (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <assign variable="convers&#227;oARS" expression="valor / cambioARS"/>
+                                                                                    <output expression="&quot;valor &quot;&amp;&quot; reais em ARS &#233; &quot;&amp; convers&#227;oARS &amp;&quot; pesos argentino (com base no dia 26/03/2023).&quot;" newline="True"/>
+                                                                                </else>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

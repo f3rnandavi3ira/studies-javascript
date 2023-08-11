@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 36</title>
+</head>
+<body>
+    <script>
+
+        function ListaSuperMercado() {
+          
+            soma = 0;  
+
+            while(preco != -1) {
+               
+                var preco = Number(prompt("Informe o valor do produto. Para parar o programa digite -1 (menos um)"));
+               
+                               
+                if (preco != soma){
+
+                    soma = preco + soma;
+
+                }
+            }
+
+            alert("A soma dos produtos informados é " + soma);
+        }
+        
+        ListaSuperMercado();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Clientes</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+   
+    
+</head>
+<body id="conteudo">
+    <header>
+        <div class="logo">
+            <a href="index.html" target="_self"><img src="images/logo.png" alt="BookHouse"></a>
+        </div>
+
+        <div class="pesq">
+            <input type="text" name="pesq" id="pesq" placeholder="O que você esta procurando?">
+            <button><img src="images/pesquisa.png" alt="lupa"></button>
+        </div>
+
+        <div class="usuario">
+            <p>Adm,</p>
+            <img src="images/adicionar-usuario.png" alt="usuário">
+        </div>
+    </header>
+    <nav>
+        <!--No onclick definimos a função carregarPagina (função que inicia a requisição ajax) e no paramêtro informamos a URL que deve ser acessada. Ou seja, quando o usuário clicar em alguma página que deseja acessar, a função será executada para realizar o direcionamento através do ajax.-->
+        <a href="#" onclick="carregarPagina('lt_produtos.html')">Listagem de Produtos</a>
+        <a href="#" onclick="carregarPagina('lt_clientes.html')">Listagem de Clientes</a> 
+    </nav>
+
+    <!--Conteúdo Principal-->
+    
+    <table id="tabela">    
+
+        <caption class colspan="5">Listagem de Clientes</caption>
+            
+        <thead>    
+            <tr class="header">
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Quantidade Livros</th>
+                <th>Total Compra</th>
+            </tr>
+        </thead>
+        <tbody> 
+             
+            <tr class="conteudo" id="coluna1">
+                <td>C001</td>
+                <td>Fernanda Vieira de Oliveira</td>
+                <td>20</td>
+                <td>80,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna2">
+                <td>C002</td>
+                <td>Josiane Caroliny da Silva Nascimento</td>
+                <td>40</td>
+                <td>90,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna3">
+                <td>C003</td>
+                <td>Kellen Jessica Rocha Silva</td>
+                <td>0</td>
+                <td>980,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna4">
+                <td>C004</td>
+                <td>Lara Yumi Carvalho Misugui</td>
+                <td>50</td>
+                <td>18,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna5">
+                <td>C005</td>
+                <td>Laura Desterro Franco </td>
+                <td>12</td>
+                <td>30,00</td>            
+            </tr>
+        </tbody>
+
+        <TFoot>
+            <tr>
+                <td class="footer" colspan="5">*** Total de Clientes 5 ***</td>
+            </tr>
+        </TFoot> 
+
+    </table>
+    <br>
+    <footer>
+        <div>
+            <ul class="contato">
+                <li>Rua Pedro Rissato, 30 - Osasco, SP.</li>
+                <li>62.249.008/0001-43</li>
+                <li>contato@bookhoooouse.com</li>
+            </ul>
+        </div>
+
+        <div class="sociais">
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><img src="images/twitter.png" alt="Twitter"></a></li>
+                <li><a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube"></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
+        
+    </footer>
+</body>
+<script src="src/js/carrega_pg.js"></script> <!--chamada para requisição ajax que realizará o direcionamento para a página solicitada pelo usuário.-->
+</html>

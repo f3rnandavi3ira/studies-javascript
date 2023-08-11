@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+</head>
+<body>
+    <header>
+        <h2>Contato</h2>
+        <nav>
+            <a href="curriculo.html" target="_self">Início</a>
+            <a href="galeria.html" target="_self">Galeria</a>
+            <a href="contato.html" target="_self">Contato</a>
+        </nav>
+    </header>
+    <main>
+        <br>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+
+                    <label for="nomeid">Nome completo:</label>
+                    <input type="text" name="nome" id="nomeid" placeholder="Informe seu nome completo" required>
+                    <br> <br>
+
+                    <label for="emailid">Email:</label>
+                    <input type="email" name="email" id="emailid" placeholder="nome@meuemail.com" required>
+                    <br> <br>
+
+                    <label for="idadeid">Idade:</label>
+                    <input type="number" name="idade" id="idadeid" placeholder="Informe sua idade" required>
+                    <br> <br>
+
+                    <label for="telefoneid">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefoneid" placeholder="(00) 91234-5678" required> 
+                    <br><br>
+
+                    <label for="nascimentoid">Data de nascimento:</label>
+                    <input type="date" name="nascimento" id="nascimentoid">
+                    <br><br>
+
+                    <label for="sexoid">Sexo:</label>
+                    <select name="sexo" id="sexoid" required="required">
+                        <option value="" selected>Escolha uma opção</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="nbinario">Não Binario</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <br><br>
+                    
+                    <label for="civilid">Estado Civil:</label>
+                    <select name="civil" id="civilid">
+                        <option value="solteiro">Solteiro</option>
+                        <option value="casado">Casado</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="viuvo">Viúvo</option>
+                    </select>
+
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Dados da Empresa </legend>
+
+                <label for="cnpjid">CNPJ:</label>
+                <input type="number" name="cnpj" id="cnpjid" placeholder="00.000.000/0001-00">
+                <br><br>
+
+                <label for="razaoid">Razão Social:</label>
+                <input type="text" name="razao" id="razaoid">
+                <br><br>
+
+                <label for="ramoid">Ramo de atuação:</label>
+                <input type="text" name="ramo" id="ramoid">        
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Endereço</legend>
+
+                <label for="cepid">CEP:</label>
+                <input type="number" name="cep" id="cepid" placeholder="00000-00" required>
+                <br><br>
+
+                <label for="logradouroid">Tipo de Logradouro:</label>
+                <select name="logradouro" id="logradouroid" required>
+                    <option value="" selected>Escolha uma opção</option>
+                    <option value="rua">Rua</option>
+                    <option value="avenida">Avenida</option>
+                    <option value="praca">Praça</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <br><br>
+
+                <label for="enderecoid">Logradouro:</label>
+                <input type="text" name="endereco" id="enderecoid" placeholder="Informe o nome da sua rua" required>
+                <br><br>
+
+                <label for="cidadeid">Cidade:</label>
+                <input type="text" name="cidade" id="cidadeid" required>
+                <br><br>
+
+                <label for="estadoid">Estado:</label>
+                <select name="estado" id="estadoid" required>
+                    <option value="" selected>Escolha uma opção</option>
+                    <option value="acre">AC</option>
+                    <option value="alagoas">AL</option>
+                    <option value="amapa">AP</option>
+                    <option value="amazonas">AM</option>
+                    <option value="bahia">BA</option>
+                    <option value="ceara">CE</option>
+                    <option value="distrito">DF</option>
+                    <option value="espirtosanto">ES</option>
+                    <option value="goias">GO</option>
+                    <option value="maranhao">MA</option>
+                    <option value="matogrosso">MT</option>
+                    <option value="matrogrossodosul">MS</option>
+                    <option value="minasgerais">MG</option>
+                    <option value="para">PA</option>
+                    <option value="paraiba">PB</option>
+                    <option value="parana">PR</option>
+                    <option value="pernambuco">PE</option>
+                    <option value="piaui">PI</option>
+                    <option value="riodejaneiro">RJ</option>
+                    <option value="riograndedonorte">RN</option>
+                    <option value="riograndedosul">RS</option>
+                    <option value="rondonia">RO</option>
+                    <option value="roraima">RR</option>
+                    <option value="santacatarina">SC</option>
+                    <option value="saopaulo">SP</option>
+                    <option value="sergipe">SE</option>
+                    <option value="tocantins">TO</option>
+                </select>
+
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Descrição detalhada do interesse</legend>
+                <br>
+
+                <label for="interesseid">Escreva sua mensagem:</label>
+                <textarea name="interesse" id="interesseid" cols="60" rows="10"></textarea>
+
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Serviço Requisitado</legend>
+
+                <input type="checkbox" name="grupo" id="grupoid" >
+                <label for="grupoid">Coaching em grupo</label>
+                <br>
+
+                <input type="checkbox" name="executivo" id="executivoid">
+                <label for="executivoid">Coaching executivo</label>
+                <br>
+
+                <input type="checkbox" name="futuro" id="futuroid">
+                <label for="futuroid">Coaching em pós líder do futuro - LF</label>
+                <br>
+
+                <input type="checkbox" name="treinamento" id="treinamentoid">
+                <label for="treinamentoid">Treinamentos corporativos</label>
+                <br>
+
+                <input type="checkbox" name="pessoal" id="pessoalid">
+                <label for="pessoalid">Programa de auta performance pessoal</label>
+
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Contratação</legend>
+
+                <input type="radio" name="contratacao" id="cltid">
+                <label for="cltid">CLT</label>
+
+                <input type="radio" name="contratacao" id="meiid">
+                <label for="meiid">MEI</label>
+
+                <input type="radio" name="contratacao" id="freeid">
+                <label for="freeid">Freelancer</label>
+
+            </fieldset>
+            <br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+        
+
+    </main>
+    <br>
+    <br>
+    <nav>
+        <a href="galeria.html">Voltar</a>
+    </nav>
+    <br>
+    <hr>
+    <footer>
+        <a href="http://intagram.com" target="_blank"> <img src="imagens/instagram.png" alt="Instagram"> </a>
+        <a href="http://linkedin.com" target="_blank"> <img src="imagens/linkedin.png" alt="LinkedIn"> </a>
+        <a href="http://facebook.com" target="_blank"> <img src="imagens/facebook.png" alt="Facebook"> </a>
+    </footer>
+</body>
+</html>

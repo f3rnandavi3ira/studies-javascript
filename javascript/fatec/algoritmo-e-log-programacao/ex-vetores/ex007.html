@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+</head>
+<body>
+    <script>
+
+        function trocaElemento() {
+            
+            debugger;
+
+            v = []
+            v[1] = 5
+            v[2] = 1
+            v[3] = 4
+            v[4] = 2
+            v[5] = 7
+            v[6] = 8
+            v[7] = 3
+            v[8] = 6
+
+            primeiroValor = v[1];
+            ultimoValor = v[8];
+            
+            v[1] = ultimoValor;
+            v[8] = primeiroValor;
+            
+
+          /*
+            for (let i = 8; i>=5; i--) {
+            aux = v [i]; 
+            v [i] = v [8 - i +1]; 
+            v [8 - i +1] = aux;
+            break; 
+        } */
+                
+        
+            document.write(v)
+        }
+        
+        trocaElemento();
+
+    </script>
+</body>
+</html>

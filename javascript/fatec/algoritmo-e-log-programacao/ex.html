@@ -1,0 +1,61 @@
+Operação matemática - Pseudocódigo
+
+varResultado
+varN1
+varN2
+varOperador : literal;
+
+Início
+
+Escreva("Digite + para Adição")
+Escreva("Digite - para Subtração")
+Escreva("Digite * para Multiplicação")
+Escreva("Digite / para Divisão")
+
+Leia(varOperador)
+
+Escreva("Digite o primeiro número.")
+
+Leia(varN1)
+
+Escreva("Digite o segundo número.")
+
+Leia(varN2)
+
+Se (varOperador = "+") então
+    
+    varResultado = varN1 + varN2
+    Escreva("A soma de " , varN1 , "+" , varN2 , " é " , varResultado);
+
+    Senão
+
+        Se (varOperador = "-") então
+    
+        varResultado = varN1 - varN2
+        Escreva("A subtração de " , varN1 , "por" , varN2 , " é " , varResultado);
+        
+        Senão
+
+            Se (varOperador = "*") então
+    
+            varResultado = varN1 * varN2
+            Escreva("A multiplicação de " , varN1 , "por" , varN2 , " é " , varResultado);
+
+            Senão
+
+                Se (varOperador = "/") então
+    
+                varResultado = varN1 / varN2
+                Escreva("A divisão de " , varN1 , "por" , varN2 , " é " , varResultado);
+
+                Senão
+
+                    Escreva("Operação inválida!!!");
+
+                fimse
+            fimse                    
+        fimse                    
+    fimse                    
+fimse
+
+fim

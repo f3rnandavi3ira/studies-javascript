@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+   <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+            color: black;
+            
+        }
+
+        th {
+        border: 1px solid black;
+        padding-top: 10px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-left: 40px;
+       }
+
+        td {
+        border: 1px solid black;
+       }
+        
+        caption {
+       
+        background-color: greenyellow;
+        border: solid black;
+        padding-top: 5%;
+        padding-right: 10%;
+        padding-bottom: 5%;
+        padding-left: 10%;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 2%;
+        
+       }
+       
+       tr.header {
+        background-color: #ff0000;
+        border: 1px solid black;
+        
+       }
+
+       tbody {
+        border: solid;
+        
+       }
+
+       table {
+        margin-left: 1%;
+        
+       }
+
+       tbody tr td:first-child {
+        background-color: rgb(64, 197, 64);
+        
+       }
+
+       tbody tr td:nth-child(2) , tbody tr td:nth-child(3){
+        background-color: rgb(228, 188, 80);        
+        
+       }
+       
+       tbody tr td:nth-child(4) , tbody tr td:nth-child(5){
+        background-color: rgb(163, 159, 147);
+        text-align: right;
+        color: black;
+        
+       }
+
+       tfoot {
+        background-color: green;
+        text-align: center;
+        
+       }
+
+       
+   </style> 
+    
+</head>
+<body>
+
+    <table>        
+        <caption class colspan="5">Lista de Produtos da Loja Virtual</caption>
+            
+        <thead>    
+            <tr class="header">
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Unidade</th>
+                <th>Quantidade Estoque</th>
+                <th>Preço Venda</th>
+            </tr>
+        </thead>
+        <tbody> 
+             
+            <tr class="conteudo" id="coluna1">
+                <td>001</td>
+                <td>Areia</td>
+                <td>M3</td>
+                <td>20</td>
+                <td>80,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna2">
+                <td>002</td>
+                <td>Pedra</td>
+                <td>M3</td>
+                <td>40</td>
+                <td>90,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna3">
+                <td>003</td>
+                <td>Bloco concreto</td>
+                <td>MILHEI</td>
+                <td>0</td>
+                <td>980,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna4">
+                <td>004</td>
+                <td>Cimento</td>
+                <td>UNID</td>
+                <td>50</td>
+                <td>18,00</td>            
+            </tr>
+            <tr class="conteudo" id="coluna5">
+                <td>005</td>
+                <td>Ferro</td>
+                <td>BARRA</td>
+                <td>12</td>
+                <td>30,00</td>            
+            </tr>
+        </tbody>
+        <TFoot>
+            <tr>
+                <td class="footer" colspan="5">*** Total de Produtos 5 ***</td>
+            </tr>
+        </TFoot> 
+    </table>
+    
+   
+</body>
+</html>

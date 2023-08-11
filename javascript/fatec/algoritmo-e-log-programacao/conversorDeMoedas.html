@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Moedas</title>
+
+</head>
+<body>
+
+    <!-- Criar input select com as opções de moeda para conversão 
+    
+    <label for="moeda"></label>
+    <select name="moeda" id="moeda">
+        <option value="1">USD</option>
+        <option value="2">EUR</option>
+    </select>
+        
+    -->
+
+
+    <script>
+
+        var moeda;
+
+        while (moeda != -1) {
+             // Solicita ao usuário o número da moeda de origem
+        var moeda = parseInt(window.prompt("Digite o número de 1 a 10 referente à moeda que deseja fazer a conversão do BRL (real):\n1 USD (dólar)\n2 EUR (euro)\n3 JPY (iene)\n4 GBP (libras esterlinas)\n5 CHF (franco suíço)\n6 CAD (dólar canadense)\n7 AUD (dólar australiano)\n8 ZAR (rand)\n9 CNY (yuan)\n10 ARS (peso argentino)"));
+
+// Solicita ao usuário o valor em real a ser convertido
+var valor = parseFloat(window.prompt("Digite o valor que deseja converter: ").replace(',', '.'));
+
+            if (moeda !=-1) {
+                
+
+
+
+
+// Faz a solicitação à API da Awesome para obter as taxas de câmbio
+fetch('https://economia.awesomeapi.com.br/json/all')
+    .then(response => response.json())
+    .then(data => {
+        // Obtém as taxas de câmbio atualizadas
+        const rates = data;
+
+        // Realiza a conversão conforme o valor da variável "moeda"
+        switch (moeda) {
+            case 1:
+                // Cálculo de real para dólar
+                var conversaoUSD = valor / rates.USD.ask;
+                // Mostra para o usuário o valor convertido
+                document.write(valor + " reais em USD é " + parseFloat(conversaoUSD).toFixed(2) + " dólares");
+                break;
+            case 2:
+                // Cálculo de real para euro
+                var conversaoEUR = valor / rates.EUR.ask;
+                // Mostra para o usuário o valor convertido
+                document.write(valor + " reais em EUR é " + parseFloat(conversaoEUR).toFixed(2) + " euros");
+                break;
+            case 3:
+                // Cálculo de real para iene
+                var conversaoJPY = valor / rates.JPY.ask;
+                // Mostra para o usuário o valor convertido
+                document.write(valor + " reais em JPY é " + parseFloat(conversaoJPY).toFixed(2) + " ienes");
+                break;
+            case 4:
+                // Cálculo de real para libra esterlina
+                var conversaoGBP = valor / rates.GBP.ask;
+                // Mostra para o usuário o valor convertido
+                document.write(valor + " reais em GBP é " + parseFloat(conversaoGBP).toFixed(2) + " libras");
+                break;
+            case 5:
+                // Cálculo de real para franco suíço
+                var conversaoCHF = valor / rates.CHF.ask;
+                // Mostra para o usuário o valor convertido
+                document.write(valor + " reais em CHF é " + parseFloat(conversaoCHF).toFixed(2) + " francos-suíços");
+                break;
+            case 6:
+                // Cálculo de real para dólar canadense
+                var conversaoCAD = valor / rates.CAD.ask;
+                //Mostra para o usuário o valor convertido
+                document.write(valor + " reais em CAD é " + parseFloat(conversaoCAD).toFixed(2) + " dólares canadense")
+                break;
+            case 7:
+                //Cálculo de real para dólar australiano
+                var conversaoAUS = valor / rates.AUS.ask
+                //Mostra para o usuário o valor convertido
+                document.write(valor + " reais em AUS é " + parseFloat(conversaoAUS).toFixed(2) + " dólares australianos")
+                break;
+            case 8: 
+                //Cálculo de real para rand
+                var conversaoZAR = valor * rates.ZAR.ask
+                //Mostra para o usuário o valor convertido
+                document.write(valor + " reais em ZAR é " + parseFloat(conversaoZAR).toFixed(2) + " rands")
+                break;
+            case 9: 
+                //Cálculo de real para yuan
+                var conversaoCNY = valor * rates.CNY.ask
+                //Mostra para o usuário o valor convertido
+                document.write(valor + " reais em CNY é " + parseFloat(conversaoCNY).toFixed(2) + " yuans")
+                break;
+            case 10: 
+                //Cálculo de real para peso argentino
+                var conversaoARS = valor * rates.ARS.ask
+                //Mostra para o usuário o valor convertido
+                document.write(valor + " reais em ARS é " + parseFloat(conversaoARS).toFixed(2) + " pesos argentino")
+                break;
+            default:
+                //Caso o valor digitado na variável "moeda" seja diferente de 1,2,3,4,5,6,7,8,9 ou 10 é apresentado a mensagem "Valor inválido"
+                document.write("Valor inválido")
+    }
+        }
+         )
+
+
+            }
+        }
+            
+        
+       
+
+            </script>
+
+        </body>
+        </html>

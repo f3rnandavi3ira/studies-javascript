@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <script>
+
+        function listaNomes() {
+            
+            debugger;
+
+            var nomesLista = [];
+
+            for (let i = 0; i < 10; i++) {
+                var nome = prompt('Digite um nome.').toLowerCase();
+                nomesLista.push(nome);
+            }
+            
+            var nomePesquisa = prompt('Digite o nome a ser procurado.').toLowerCase();
+
+            if (nomesLista.includes(nomePesquisa)){
+                alert('ACHEI')
+            } else {
+                alert('NÃO ACHEI')
+            }
+
+        }
+        
+        listaNomes();
+
+    </script>
+</body>
+</html>

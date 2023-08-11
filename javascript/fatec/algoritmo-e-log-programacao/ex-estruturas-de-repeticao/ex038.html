@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 38</title>
+</head>
+<body>
+    <script>
+
+        function Idade() {
+          
+            idade;
+            maior = 0;
+            menor = 0;  
+
+            while(idade != 0) {
+               
+                var idade = Number(prompt("Informe a idade desejada. Para parar o programa digite 0 (zero)."));
+
+                    if (idade>maior) {
+                        maior = idade;
+
+                    }
+
+                     if (idade != 0 ) {
+
+                         if (idade < menor || menor == 0) {                       
+                                
+                                menor = idade;
+                            }
+                        }
+                
+            }
+
+            document.write("<br>" + "A maior idade informada foi:  " + maior + "<br>");
+            document.write("<br>" + "A menor idade informada foi:  " + menor + "<br>");
+        }
+               
+           
+        
+        Idade();
+
+    </script>
+</body>
+</html>

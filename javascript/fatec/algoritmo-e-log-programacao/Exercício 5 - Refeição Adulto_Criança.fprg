@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nanda"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-23 11:09:03 "/>
+        <attribute name="created" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDItMjM7IjEwOjQ3OjQ2ICI7MjczMA=="/>
+        <attribute name="edited" value="bmFuZGE7TEFQVE9QLU44MDJJOUhSOzIwMjMtMDItMjM7IjExOjA5OjAzICI7MTsyODMw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="valorQtdTicketsAdulto" type="Real" array="False" size=""/>
+            <declare name="valorQtdTicketsCrian&#231;a" type="Real" array="False" size=""/>
+            <declare name="valorTotalRefei&#231;&#227;oAdulto" type="Real" array="False" size=""/>
+            <declare name="valorTotalRefei&#231;&#227;oCrian&#231;a" type="Real" array="False" size=""/>
+            <declare name="valorTotalRefei&#231;&#227;oGeral" type="Real" array="False" size=""/>
+            <declare name="VALORREFEICAOADULTO" type="Real" array="False" size=""/>
+            <declare name="VALORREFEICAOCRIANCA" type="Real" array="False" size=""/>
+            <assign variable="VALORREFEICAOADULTO" expression="20.00"/>
+            <assign variable="VALORREFEICAOCRIANCA" expression="12.00"/>
+            <output expression="&quot;Quantidade de Tickets Adulto.&quot;" newline="True"/>
+            <input variable="valorQtdTicketsAdulto"/>
+            <output expression="&quot;Quantidade de Tickets Crin&#231;a.&quot;" newline="True"/>
+            <input variable="valorQtdTicketsCrian&#231;a"/>
+            <assign variable="valorTotalRefei&#231;&#227;oAdulto" expression="valorQtdTicketsAdulto * VALORREFEICAOADULTO"/>
+            <assign variable="valorTotalRefei&#231;&#227;oCrian&#231;a" expression="valorQtdTicketsCrian&#231;a * VALORREFEICAOCRIANCA"/>
+            <assign variable="valorTotalRefei&#231;&#227;oGeral" expression="valorTotalRefei&#231;&#227;oAdulto + valorTotalRefei&#231;&#227;oCrian&#231;a"/>
+            <output expression="&quot;O cliente deve pagar R$&quot;&amp;&quot; &quot;&amp; valorTotalRefei&#231;&#227;oAdulto&amp;&quot; &quot;&amp; &quot;pelos&quot; &amp;&quot; &quot;&amp; valorQtdTicketsAdulto&amp;&quot; &quot; &amp;&quot; &quot;&amp; &quot;tickets de  refei&#231;&#227;o para adultos e R$&quot;&amp;&quot; &quot;&amp; valorTotalRefei&#231;&#227;oCrian&#231;a &amp;&quot; &quot;&amp; &quot;pelos&quot; &amp;&quot; &quot;&amp; valorQtdTicketsCrian&#231;a &amp; &quot; &quot;&amp;&quot;tickets de refei&#231;&#227;o para crian&#231;as, totalizando R$&quot; &amp;&quot; &quot;&amp; valorTotalRefei&#231;&#227;oGeral &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

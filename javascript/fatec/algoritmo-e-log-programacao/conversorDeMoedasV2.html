@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+
+    <!-- 
+        //INTEGRANTES DO GRUPO: 
+        Fernanda Vieira de Oliveira 
+        Josiane Caroliny da Silva Nascimento 
+        Kéllen Jéssica Rocha Silva
+        Lara Yumi Carvalho Misugui 
+        Laura Desterro Franco 
+
+        //DESCRIÇÃO DO PROBLEMA-TEMÁTICA
+        Optamos por criar um algoritmo que fosse capaz de converter a moeda brasileira Real (BRL)  para as dez principais moedas do mundo (de acordo com o site planner.com.br), isso porque essa ferramenta é bastante útil para pessoas que irão viajar internacionalmente, para quem faz transações financeiras internacionais e até mesmo para quem faz investimentos em moedas estrangeiras, retornando calculos precisos dos valores estrangeiros com base na nossa moeda nacional. As moedas quem podem ser utilizadas no nosso conversor são : dólar americano (USD) - Estados Unidos; euro (EUR) - Países da Zona do Euro; iene (JPY) - Japão; libra esterlina (GBP) - Reino Unido; franco suíço (CHF) - Suíça; dólar canadense (CAD) - Canadá; dólar australiano (AUD) - Austrália; shekel israelense (ILS) - Israel; yuan (CNY) - China, e por último o peso argentino (ARS) - a Argentina.
+
+
+        //DESCRIÇÃO DO FUNCIONAMENTO DO ALGORITMO 
+        É apresentado ao usuário um menu onde são dadas as opções de moedas que podem ser utilizadas para a base da conversão do Real. Ao selecionar uma moeda específica e inserir o valor R$ a ser convertido, a função converter() será executada, requisitando as taxas de cambio atualizadas para a api e em seguida a estrutura switch-case será ativada, realizando a conversão dentre as opções de moedas selecionadas. Os valores são armazenados no vetor conversoes para ser exibido quando o usuário clicar em finalizar, momento em que a função finalizar() é acionada. Caso nenhuma nenhuma moeda for selecionada, nenhum valor for inserido ou ambos, e o usuário tentar converter ou finalizar, será exibido a mensagem "Nenhum valor foi convertido". 
+
+
+        //INDENTIFICAÇÃO E EXPLICAÇÃO DAS VARIÁVEIS DE ENTRADA E SAÍDA
+
+        /*
+        moeda - entrada - variável que recebe o valor de qual operação de conversão será realizada Ex: conversão para libra
+        valor - entrada - variável que recebe o valor em reais a ser convertido
+        cambio - constante que possui o valor das taxas de cambio atualizadas fornecidas pela api
+
+        conversaoUSD - saída - variável que recebe o valor da conversão do real para dólar.
+        conversaoEUR - saída - variável que recebe o valor da conversão do real para euro.
+        conversaoJPY - saída - variável que recebe o valor da conversão do real para iene.
+        conversaoGBP - saída - variável que recebe o valor da conversão do real para libras esterlinas.
+        conversaoCHF - saída - variável que recebe o valor da conversão do real para franco suíço.
+        conversaoCAD - saída - variável que recebe o valor da conversão do real para dólar canadense.
+        conversaoAUS - saída - variável que recebe o valor da conversão do real para dólar australiano.
+        conversaoILS - saída - variável que recebe o valor da conversão do real para shekel israelense. 
+        conversaoCNY - saída - variável que recebe o valor da conversão do real para yuan.
+        conversaoARS - saída - variável que recebe o valor da conversão do real para peso argentino.
+        
+        conversao - saída - variável para guardar a mensagem do valor da conversão.
+        conversoes - vetor que guarda as conversões realizadas
+        conversoesHTML - vetor que recebe as conversões formatadas para html
+        
+
+    -->
+
+    <h1>Conversor de Moedas</h1>
+
+    <!-- //Apresenta um menu com opções e pergunta ao usuário para qual moeda ele deseja converter -->
+    <label for="moeda">Converter para:</label>
+    <select name="moeda" id="moeda">
+        <option value="" disabled selected>--- Selecione uma opção ----</option>
+        <option value="USD">DÓLAR</option>
+        <option value="EUR">EURO</option>
+        <option value="JPY">IENE</option>
+        <option value="GBP">LIBRAS ESTERLINAS</option>
+        <option value="CHF">FRANCO SUÍÇO</option>
+        <option value="CAD">DÓLAR CANADENSE</option>
+        <option value="AUD">DÓLAR AUSTRALIANO</option>
+        <option value="ILS">SHEKEL ISRAELENSE</option>
+        <option value="CNY">YUAN</option>
+        <option value="ARS">PESO ARGENTINO</option>
+    </select>
+
+    <!-- campo para inserir valor a ser convertido -->
+    <br>
+    <br>
+    <label for="valor">Valor em reais a ser convertido: </label>
+    <input type="text" name="valor" id="valor">
+    
+    <!-- botão para iniciar e finalizar conversões -->
+    <br>
+    <br>
+    <button onclick="converter()">Converter</button>
+    <button onclick="finalizar()">Finalizar</button>
+
+    <!-- resultado das conversões -->
+    <br>
+    <br>
+    <p id="conversao"> </p>
+    <p id="conversoes"> </p>
+
+
+
+
+    <script>
+        //--------------INÍCIO DO ALGORITMO-----------> 
+
+        //vetor para guardar as conversões realizadas
+        var conversoes = []; 
+
+        //função que realiza a conversão
+        function converter() { 
+            //limpa o html de conversoes
+            document.getElementById("conversoes").innerHTML = " " 
+
+            //declara na var moeda o valor do input no html para qual moeda será convertido
+            var moeda = document.getElementById("moeda").value 
+            //declara na var valor o valor do input no html
+            var valor = parseFloat(document.getElementById("valor").value.replace(',','.')) 
+
+            //bloco para verificar se foi inserido valores ou não
+            if (isNaN(valor)) {
+                document.getElementById("conversao").innerHTML = "Nenhum valor foi convertido";
+            return;
+            }
+
+            
+            // Faz a solicitação à API da Awesome para obter as taxas de câmbio
+            fetch('https://economia.awesomeapi.com.br/json/all')
+                .then(response => response.json())
+                .then(data => {
+                    // Obtém as taxas de câmbio atualizadas
+                    const cambio = data;
+
+
+
+                    // Realiza a conversão conforme o valor da variável "moeda"
+                    switch (moeda) {
+                        case "USD":
+                            // Cálculo de real para dólar
+                            var conversaoUSD = valor / cambio.USD.ask;
+                            // Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoUSD).toFixed(2) + " dólares";
+                            break;
+                        case "EUR":
+                            // Cálculo de real para euro
+                            var conversaoEUR = valor / cambio.EUR.ask;
+                            // Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoEUR).toFixed(2) + " euros";
+                            break;
+                        case "JPY":
+                            // Cálculo de real para iene
+                            var conversaoJPY = valor / cambio.JPY.ask;
+                            // Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoJPY).toFixed(2) + " ienes";
+                            break;
+                        case "GBP":
+                            // Cálculo de real para libra esterlina
+                            var conversaoGBP = valor / cambio.GBP.ask;
+                            // Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoGBP).toFixed(2) + " libras";
+                            break;
+                        case "CHF":
+                            // Cálculo de real para franco suíço
+                            var conversaoCHF = valor / cambio.CHF.ask;
+                            // Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoCHF).toFixed(2) + " francos-suíços";
+                            break;
+                        case "CAD":
+                            // Cálculo de real para dólar canadense
+                            var conversaoCAD = valor / cambio.CAD.ask;
+                            //Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoCAD).toFixed(2) + " dólares canadense";
+                            break;
+                        case "AUD":
+                            //Cálculo de real para dólar australiano
+                            var conversaoAUD = valor / cambio.AUD.ask
+                            //Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoAUD).toFixed(2) + " dólares australianos";
+                            break;
+                        case "ILS":
+                            //Cálculo de real para shekel israelense
+                            var conversaoILS = valor * cambio.ILS.ask
+                            //Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoILS).toFixed(2) + " shekels israelense";
+                            break;
+                        case "CNY":
+                            //Cálculo de real para yuan
+                            var conversaoCNY = valor * cambio.CNY.ask
+                            //Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoCNY).toFixed(2) + " yuans";
+                            break;
+                        case "ARS":
+                            //Cálculo de real para peso argentino
+                            var conversaoARS = valor * cambio.ARS.ask
+                            //Mostra para o usuário o valor convertido
+                            conversao = valor + " reais equivalem à " + parseFloat(conversaoARS).toFixed(2) + " pesos argentino";
+                            break;
+                        default:
+                            //Caso o valor digitado na variável "moeda" seja diferente das opções estabelecidas é apresentado a mensagem "Valor inválido"
+                            conversao = "Valor inválido";
+                            break;
+                    }
+
+                    //após finalização da conversao é exibida no html 
+                    document.getElementById("conversao").innerHTML = conversao;
+                    // a cada conversão o valor é guardado na variável conversões
+                    conversoes.push(conversao);
+                });
+
+                     
+        }
+        
+
+        //função que apresenta todas as conversões ao finalizar
+        function finalizar () {
+ 
+            //limpa o html de conversao
+            document.getElementById("conversao").innerHTML = "" 
+            
+            //se o vetor conversoes for diferente de 0 (não estiver vazio)
+            if (conversoes.length !== 0){ 
+                //declaração do vetor que recebe as conversões formatadas para html
+                var conversoesHTML = ""; 
+                //bloco para percorer o vetor e formatar para o html
+                for (var i=0; i < conversoes.length; i++) {
+                    conversoesHTML += conversoes[i] + "<br>"
+                }
+                //o conteúdo do vetor conversoesHTML será exibido no "conversoes" do html
+                document.getElementById("conversoes").innerHTML = conversoesHTML
+
+
+            }else{
+                //"nenhum valor foi convertido"
+                document.getElementById("conversoes").innerHTML = "Nenhum valor foi convertido"
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 40</title>
+</head>
+<body>
+    <script>
+
+        function Intervalos() {
+
+            var entre_00_25 = 0;
+            var entre_26_50 = 0;
+            var entre_51_75 = 0;
+            var entre_76_100 = 0;
+
+            var num;
+
+            while(num != -1){
+
+                var num = Number(prompt("Digite um número. Para parar o programa digite -1 (menos um)."))
+                
+                if (num != -1){
+                    if (num <= 25) {
+                    entre_00_25++;
+                    
+                    }   else if (num <= 50) {
+                            entre_26_50++;
+
+                        }   else if (num <= 75) {
+                                entre_51_75++;
+
+                            }   else {
+                                   entre_76_100++;
+                            }
+                    
+                }
+            }
+                             
+            document.write("<br>" + "Quantidade de número no intervalo entre 00 e 25: " + entre_00_25 +"<br>");
+            document.write("<br>" +"Quantidade de número no intervalo entre 26 e 50: " + entre_26_50 + "<br>");
+            document.write("<br>" +"Quantidade de número no intervalo entre 51 e 75: " + entre_51_75 + "<br>");
+            document.write("<br>" +"Quantidade de número no intervalo entre 76 e 100: " + entre_76_100 + "<br>");
+
+        }       
+       
+        Intervalos();
+
+    </script>
+</body>
+</html>
